@@ -8,20 +8,43 @@
  * 6. ローカルストレージに保存される。
  */
 (function() {
+
+  /** WorkSpace class **/
+  function WorkSpace(element) {
+    /** memo情報を保持 */
+    this.id;
+    this.memo;
+  };
+
+  WorkSpace.prototype.init = function() {
+  }
+
+  /** 初期化 */
   $(document).ready(function() {
-    /** 要素keyに対するイベントハンドラ */
-    $('.element')
-      .on('keyup', function() {
-        upDateWorkSpace.call(this);
-      })
-      .on('focusin', function() {
-        upDateWorkSpace.call(this);
-      });
+    /** WorkSpaceの初期化  */
+    $('.workspace').each(function() {
+      $(this).data('data.workspace', new WorkSpace(this));
+    });
   });
 
-  function upDateWorkSpace() {
-    var string = $(this).val();
-    $('.workspace').val(string);
-  }
+//  /** workspaceのclickイベントの実装 */
+//  $('.workspace').on('keyup', function() {
+//    /** 更新が起こるたびに再描画 */
+//    console.log(
+//      $(this).data('data.workspace')
+//    );
+//  });
+//
+//  /** memo cardのclickイベントの実装 */
+//  $('.element').on('click', function() {
+//    upDateWorkSpace.call(this);
+//  });
+//
+//
+//  function upDateWorkSpace() {
+//    var data = $(this).data('t.model')
+//    data.id  = $(this).data('id');
+//    $('.workspace').val(data.memo);
+//  }
 
 })();

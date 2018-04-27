@@ -1,36 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <style>
-.memo-list {
-  height: 600px;
-  width: 300px;
-  background: coral;
-}
-  </style>
-</head>
-<body>
-  <div class='memo-list'>
-    <div class="memo-element-wrapper">
-      <input class='element' type="text">
-    </div>
-    <div class="memo-element-wrapper">
-      <input class='element' type="text">
-    </div>
-    <div class="memo-element-wrapper">
-      <input class='element' type="text">
-    </div>
-    <div class="memo-element-wrapper">
-      <input class='element' type="text">
-    </div>
-  </div>
-  <div class="memo-workspace">
-      <input class='workspace' type="text">
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="content">
 
-  <script src="./jquery.js"></script>
-  <script src="./app.js"></script>
-</body>
+      <div class='memo-list'>
+        <div class='element' data-id='1'>aaaaa</div>
+        <div class='element' data-id='2'>bbbbbbb</div>
+        <div class='element' data-id='3'>cccc</div>
+      </div>
+
+      <div class="memo-workspace">
+        <textarea class='workspace'></textarea>
+      </div>
+    </div>
+
+    <script src="./jquery.js"></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
