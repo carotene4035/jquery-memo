@@ -8,58 +8,6 @@
  * 6. ローカルストレージに保存される。
  */
 (function() {
-  /*
-   * Memo class
-   */
-  function Memo(element) {
-    this.element = element;
-    this.id = $(element).data('id');
-    this.content = $(element).text();
-  }
-
-  Memo.prototype.updateMemo = function(content) {
-    /** viewの更新 */
-    $(this.element).text(content);
-    /** modelの更新 */
-    this.content = content;
-    console.log(this);
-  }
-
-  Memo.prototype.setActive = function() {
-    $(this.element).addClass('active');
-  }
-
-  Memo.prototype.setNonActive = function() {
-    $(this.element).removeClass('active');
-  }
-
-  /*
-   * WorkSpace class
-   */
-  function WorkSpace(element) {
-    /** memo情報を保持 */
-    this.element = element;
-    this.currentMemo;
-  };
-
-  /** 現在編集中のメモを渡す */
-  WorkSpace.prototype.setCurrentMemo = function(memoObj) {
-    if (this.currentMemo !== undefined) {
-      this.currentMemo.setNonActive();
-    }
-    this.currentMemo = memoObj;
-    this._render(this.currentMemo.content);
-  }
-
-  WorkSpace.prototype._render = function(content) {
-    $(this.element).val(content);
-  }
-
-  WorkSpace.prototype.updateContent = function() {
-    var str = $(this.element).val();
-    /** memoを更新 */
-    this.currentMemo.updateMemo(str);
-  }
 
   /** 初期化 */
   $(document).ready(function() {
@@ -80,7 +28,6 @@
     wo.updateContent();
   });
 
-
   $('.element').on('click', function() {
     upDateWorkSpace.call(this);
   });
@@ -91,5 +38,4 @@
     var wo = $('.workspace').data('data.workspace');
     wo.setCurrentMemo(memoObj);
   }
-
 })();
