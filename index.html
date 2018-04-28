@@ -3,21 +3,56 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div class="content">
 
-      <div class='memo-list'>
-        <div class='element' data-id='1'>aaaaa</div>
-        <div class='element' data-id='2'>bbbbbbb</div>
-        <div class='element' data-id='3'>cccc</div>
+    <header>
+      <div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+
+      <div class="content">
+
+        <div class='memo-list'>
+          <div class='element' data-id='1'>
+            <div class="title">title1</div>
+            <div class="content">content1</div>
+          </div>
+          <div class='element' data-id='2'>
+            <div class="title">title2</div>
+            <div class="content">content2</div>
+          </div>
+          <div class='element' data-id='3'>
+            <div class="title">title3</div>
+            <div class="content">content3</div>
+          </div>
+
+          <div class='element' data-id='4'>
+            <div class="title">title4</div>
+            <div class="content">content4</div>
+          </div>
+
+          <div class='element' data-id='5'>
+            <div class="title">title5</div>
+            <div class="content">content5</div>
+          </div>
+        </div>
+
+        <div class="memo-workspace">
+          <textarea class='workspace'></textarea>
+        </div>
       </div>
 
-      <div class="memo-workspace">
-        <textarea class='workspace'></textarea>
-      </div>
     </div>
+
+    <footer>
+      <div>
+      </div>
+    </footer>
 
     <script src="./src/jquery.js"></script>
     <script src="./src/workspace.js"></script>

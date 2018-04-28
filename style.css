@@ -1,9 +1,23 @@
-.memo-list {
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-input.workspace {
-  height: 200px;
-  width: 200px;
+header {
+  text-align: center;
+  background-color: #fafafa;
+  height: 50px;
+}
+
+footer {
+  text-align: center;
+  background-color: #fafafa;
+  height: 50px;
+}
+
+.wrapper {
+  flex-grow: 1;
 }
 
 .element {
@@ -12,16 +26,46 @@ input.workspace {
   border-bottom: 1px solid #ccc;
   border-collapse: collapse;
 }
+.element .title {
+  padding: 10px;
+}
+.element .content {
+  padding: 10px;
+}
 
 .element.active {
   background: lightgreen;
-}
-
-.memo-workspace {
-  background: lightblue;
 }
 
 .content {
   display: flex;
 }
 
+.memo-list {
+  display: 350px;
+}
+
+.memo-workspace {
+  flex-grow: 1;
+}
+
+textarea.workspace {
+  font-size: 1.5rem;
+  height: 100%;
+  width: 100%;
+  border: 0px solid #000;
+}
+
+textarea {
+  border: 0;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.5);
+}
+textarea:focus {
+  box-shadow: 0 0 3px 0 rgba(255,153,0,1);
+  outline: 0;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

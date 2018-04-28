@@ -14,7 +14,12 @@
   function Memo(element) {
     this.element = element;
     this.id = $(element).data('id');
-    this.content = $(element).text();
+
+    /** titleとcontent */
+    this.title   = $(element).find('.title').text();
+    this.content = $(element).find('.content').text();
+
+    console.log(this);
   }
 
   Memo.prototype.updateMemo = function(content) {
@@ -22,7 +27,6 @@
     $(this.element).text(content);
     /** modelの更新 */
     this.content = content;
-    console.log(this);
   }
 
   Memo.prototype.setActive = function() {
