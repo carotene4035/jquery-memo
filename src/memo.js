@@ -20,6 +20,7 @@
     this.content = $(element).find('.content').text();
 
     console.log(this);
+    /** イベントハンドラの登録 */
   }
 
   Memo.prototype.updateMemo = function(content) {
