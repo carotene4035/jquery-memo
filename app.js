@@ -16,7 +16,9 @@
     this.memo;
   };
 
-  WorkSpace.prototype.init = function() {
+  /** 現在編集中のメモのidを渡す */
+  WorkSpace.prototype.setMemoId = function(memoId) {
+    this.id = memoId;
   }
 
   /** 初期化 */
@@ -35,16 +37,25 @@
 //    );
 //  });
 //
-//  /** memo cardのclickイベントの実装 */
-//  $('.element').on('click', function() {
-//    upDateWorkSpace.call(this);
-//  });
-//
-//
-//  function upDateWorkSpace() {
-//    var data = $(this).data('t.model')
-//    data.id  = $(this).data('id');
-//    $('.workspace').val(data.memo);
-//  }
+  /** memo cardのclickイベントの実装 */
+  $('.element').on('click', function() {
+    upDateWorkSpace.call(this);
+  });
+
+
+  function upDateWorkSpace() {
+    /*
+     * 1. memoのidを取得
+     * 2. workspaceのobjectを取得
+     * 3. memoのidをset
+     */
+    // 1
+    var memoId = $(this).data('id')
+    var memo = $(this).text()
+    // 2
+    var wo = $('.workspace').data('data.workspace');
+    wo.setMemoId(memoId);
+    $('.workspace').val(memo);
+  }
 
 })();
