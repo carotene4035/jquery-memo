@@ -8,8 +8,17 @@
  * 6. ローカルストレージに保存される。
  */
 (function() {
+  /*
+   * Memo class
+   */
+  function Memo(element) {
+    this.id = $(element).data('id');
+    this.content = $(element).text();
+  }
 
-  /** WorkSpace class **/
+  /*
+   * WorkSpace class
+   */
   function WorkSpace(element) {
     /** memo情報を保持 */
     this.id;
@@ -26,6 +35,11 @@
     /** WorkSpaceの初期化  */
     $('.workspace').each(function() {
       $(this).data('data.workspace', new WorkSpace(this));
+    });
+
+    /** Memoの初期化 */
+    $('.element').each(function() {
+      $(this).data('data.memo', new Memo(this));
     });
   });
 
