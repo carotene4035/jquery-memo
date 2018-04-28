@@ -12,9 +12,9 @@ input.workspace {
   border-bottom: 1px solid #ccc;
   border-collapse: collapse;
 }
-.element.active {
-  border: 3px solid #d9d9d9;
 
+.element.active {
+  background: lightgreen;
 }
 
 .memo-workspace {
@@ -24,3 +24,4 @@ input.workspace {
 .content {
   display: flex;
 }
+
